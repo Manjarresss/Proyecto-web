@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CineNova — Cartelera & Reservas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M160-80q-33 0-56.5-23.5T80-160v-600q0-33 23.5-56.5T160-840h40v-40q0-17 11.5-28.5T240-920h160q17 0 28.5 11.5T440-880v40h40q33 0 56.5 23.5T560-760h320v600H560q0 33-23.5 56.5T480-80H160Zm0-80h320v-80h320v-440H480v-80H160v600Zm200-120h80v-80h-80v80Zm0-280h80v-80h-80v80Zm160 280h80v-80h-80v80Zm0-280h80v-80h-80v80Zm160 280h80v-80h-80v80Zm0-280h80v-80h-80v80ZM320-460Z"/></svg></span>
+      <h1>CineNova</h1>
+    </div>
+    <nav class="nav">
+      <button class="nav-btn" data-section="cartelera">Cartelera</button>
+      <button class="nav-btn" data-section="reservas">Mis reservas</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Cartelera -->
+    <section id="cartelera" class="section active">
+      <div class="section-head">
+        <h2>Cartelera</h2>
+        <div class="filters">
+          <input id="search" type="search" placeholder="Buscar película..." />
+          <select id="genre">
+            <option value="">Todos los géneros</option>
+          </select>
+          <select id="order">
+            <option value="title">Ordenar: Título</option>
+            <option value="rating">Ordenar: Rating</option>
+            <option value="year">Ordenar: Año</option>
+          </select>
+        </div>
+      </div>
+      <div id="movies" class="grid"></div>
+    </section>
+
+    <!-- Reservas -->
+    <section id="reservas" class="section">
+      <div class="section-head">
+        <h2>Mis reservas</h2>
+      </div>
+      <div id="reservationsList" class="list"></div>
+    </section>
+  </main>
+
+  <!-- Modal de reserva -->
+  <dialog id="reservationModal">
+    <form method="dialog" class="modal">
+      <header class="modal-head">
+        <h3 id="modalTitle">Reservar entradas</h3>
+        <button type="button" class="icon-btn" id="closeModal" aria-label="Cerrar">✕</button>
+      </header>
+
+      <div class="modal-body">
+        <div class="movie-brief" id="movieBrief"></div>
+
+        <div class="controls">
+          <label>
+            Fecha
+            <input type="date" id="dateInput" required />
+          </label>
+          <label>
+            Función
+            <select id="timeInput" required></select>
+          </label>
+          <label>
+            Sala
+            <select id="roomInput" required>
+              <option value="Sala 1">Sala 1</option>
+              <option value="Sala 2">Sala 2</option>
+              <option value="Sala 3">Sala 3</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="legend">
+          <span><span class="dot available"></span>Disponible</span>
+          <span><span class="dot selected"></span>Seleccionado</span>
+          <span><span class="dot occupied"></span>Ocupado</span>
+        </div>
+
+        <div id="seatGrid" class="seats"></div>
+
+        <div class="summary" id="summary"></div>
+
+        <div class="buyer">
+          <label>Nombre<input id="buyerName" placeholder="Tu nombre" required/></label>
+          <label>Correo<input id="buyerEmail" type="email" placeholder="tucorreo@correo.com" required/></label>
+        </div>
+      </div>
+
+      <footer class="modal-foot">
+        <button class="btn ghost" value="cancel">Cancelar</button>
+        <button class="btn primary" id="confirmReservation" value="default">Confirmar</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> CineWeb — Hecho por Jenn</p>
+  </footer>
+
+  <script>window.__PALETA__ = { coral:"#EE4540", vino:"#C72C41", burdeos:"#801336", oscuro:"#2D132C" };</script>
+  <script src="script.js"></script>
+</body>
+</html>
+
