@@ -1,10 +1,4 @@
-/* ==========================
-   Paleta (según imagen):
-   coral  : #EE4540
-   vino   : #C72C41
-   burdeos: #801336
-   oscuro : #2D132C
-   ========================== */
+
 :root{
   --coral:#EE4540;
   --vino:#C72C41;
@@ -108,7 +102,7 @@ dialog{ border:none; padding:0; background:transparent; }
 .movie-brief h4{ margin:0}
 .controls{ display:grid; grid-template-columns: repeat(3, 1fr); gap:.6rem}
 .controls label{ display:flex; flex-direction:column; gap:.4rem; font-size:.9rem}
-.controls input, .controls select{ padding:.6rem .7rem; border-radius:10px; background:#ffffff12; border:1px solid #ffffff2a; color:var(--ink)}
+.controls input, .controls select{ padding:.6rem .7rem; border-radius:10px; background:#ffffff12; border:1px solid #ffffff2a; color:#fff}
 
 .legend{ display:flex; gap:1rem; font-size:.9rem; align-items:center; }
 .legend .dot{ display:inline-block; width:16px; height:16px; border-radius:4px; margin-right:.3rem; vertical-align:middle}
