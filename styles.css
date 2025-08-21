@@ -141,3 +141,16 @@ dialog{ border:none; padding:0; background:transparent; }
   .seats{ grid-template-columns: repeat(8, 1fr)}
   .movie-brief{ grid-template-columns: 1fr}
 }
+/* 🔹 Forzar todos los textos del modal a blanco */
+.modal, 
+.modal h1, 
+.modal h2, 
+.modal h3, 
+.modal h4, 
+.modal h5, 
+.modal h6, 
+.modal p, 
+.modal label, 
+.modal span {
+  color: #fff !important;
+}
